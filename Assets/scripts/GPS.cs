@@ -5,10 +5,8 @@ using UnityEngine;
 public class GPS : MonoBehaviour {
 
 	public static GPS Instance{ set; get; }
-
 	public float lattitude;
 	public float longitude;
-
 
 	private void Start ()
 	{
@@ -16,7 +14,6 @@ public class GPS : MonoBehaviour {
 		DontDestroyOnLoad (gameObject);
 		StartCoroutine (StartLocationService());
 	}
-
 	private IEnumerator StartLocationService()
 	{
 		if (!Input.location.isEnabledByUser)
@@ -33,7 +30,7 @@ public class GPS : MonoBehaviour {
 			maxwait--;
 		}
 
-		if (maxwait == 0)
+		if (maxwait <= 0)
 		{
 			Debug.Log ("Timed Out");
 			yield break;
@@ -48,8 +45,8 @@ public class GPS : MonoBehaviour {
 		lattitude = Input.location.lastData.latitude;
 		longitude = Input.location.lastData.longitude;
 		yield break;
-
 	}
+
 
 	private void Update () {
 		

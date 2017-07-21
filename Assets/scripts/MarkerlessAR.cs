@@ -73,6 +73,7 @@ public class MarkerlessAR : MonoBehaviour {
 			//Update Gyro
 			transform.localRotation = gyro.attitude * rot;
 		}
+
 	}
 
 }
