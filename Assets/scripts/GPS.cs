@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GPS : MonoBehaviour {
+public class GPS : MonoBehaviour
+{
 
 	public static GPS Instance{ set; get; }
 	public float lattitude;
@@ -22,7 +23,7 @@ public class GPS : MonoBehaviour {
 			yield break;
 		}
 
-		Input.location.Start ();
+		Input.location.Start (.1f,.1f);
 		int maxwait = 20;
 		while (Input.location.status == LocationServiceStatus.Initializing && maxwait > 0)
 		{
@@ -45,10 +46,5 @@ public class GPS : MonoBehaviour {
 		lattitude = Input.location.lastData.latitude;
 		longitude = Input.location.lastData.longitude;
 		yield break;
-	}
-
-
-	private void Update () {
-		
 	}
 }

@@ -9,6 +9,7 @@ public class UpdateGPSText : MonoBehaviour
 		
 	private void Update ()
 	{
-		coordinates.text = "Lat:" + GPS.Instance.lattitude.ToString () + "      Lon:" + GPS.Instance.longitude.ToString ();
+		coordinates.text = "Lat:" + GPS.Instance.lattitude.ToString() + "      Lon:" + GPS.Instance.longitude.ToString();
 	}
+
 }
